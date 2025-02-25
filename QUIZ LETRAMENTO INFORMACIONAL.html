@@ -1,0 +1,566 @@
+Claro, Matheus! Vamos adicionar as 50 perguntas ao array questions no código JavaScript e depois te ajudar a publicar o site usando GitHub Pages.
+
+🚀 Código HTML e JavaScript com 50 Perguntas
+
+Aqui está o código completo com todas as 50 perguntas adicionadas:
+
+Html
+Copiar
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Letramento Informacional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz de Letramento Informacional</h1>
+    <div id="quiz-container">
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+    </div>
+    <div class="result" id="result"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "O que é letramento informacional?",
+                options: [
+                    "Habilidade de usar apenas livros impressos",
+                    "Saber encontrar, avaliar e usar informações corretamente",
+                    "Uso de redes sociais para comunicação",
+                    "Apenas a leitura crítica de textos acadêmicos"
+                ],
+                answer: "Saber encontrar, avaliar e usar informações corretamente"
+            },
+            {
+                question: "Quem são alguns dos autores que discutem letramento informacional?",
+                options: [
+                    "Gasque, Campello e Dudziak",
+                    "Newton, Einstein e Tesla",
+                    "Machado de Assis e Drummond",
+                    "Gates, Zuckerberg e Musk"
+                ],
+                answer: "Gasque, Campello e Dudziak"
+            },
+            {
+                question: "Qual é a importância do letramento informacional na educação?",
+                options: [
+                    "Formar estudantes autônomos e críticos",
+                    "Apenas para leitura de livros",
+                    "Uso de redes sociais",
+                    "Aprender a usar tecnologia"
+                ],
+                answer: "Formar estudantes autônomos e críticos"
+            },
+            {
+                question: "Segundo Gasque (2012), o letramento informacional corresponde ao processo de desenvolvimento de competências para:",
+                options: [
+                    "Localizar, selecionar, acessar, organizar e usar informação",
+                    "Usar redes sociais",
+                    "Ler livros impressos",
+                    "Analisar filmes"
+                ],
+                answer: "Localizar, selecionar, acessar, organizar e usar informação"
+            },
+            {
+                question: "Qual é a relação entre letramento informacional e letramento digital?",
+                options: [
+                    "São completamente diferentes",
+                    "Letramento digital é um componente do letramento informacional",
+                    "Letramento informacional é mais importante",
+                    "Letramento digital é irrelevante"
+                ],
+                answer: "Letramento digital é um componente do letramento informacional"
+            },
+            {
+                question: "O que enfatiza Campello (2003) sobre o letramento informacional?",
+                options: [
+                    "Compreensão do contexto social e cultural da informação",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Uso de tecnologia"
+                ],
+                answer: "Compreensão do contexto social e cultural da informação"
+            },
+            {
+                question: "Segundo Dudziak (2003), o letramento informacional contribui para:",
+                options: [
+                    "Desenvolvimento pessoal, econômico, social e cultural dos indivíduos",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Desenvolvimento pessoal, econômico, social e cultural dos indivíduos"
+            },
+            {
+                question: "O que destaca Gasque (2010) sobre o letramento informacional?",
+                options: [
+                    "Abordagem crítica e reflexiva no uso da informação",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Abordagem crítica e reflexiva no uso da informação"
+            },
+            {
+                question: "Qual é a função do letramento informacional no contexto acadêmico?",
+                options: [
+                    "Melhorar competências de pesquisa e uso de informações",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Melhorar competências de pesquisa e uso de informações"
+            },
+            {
+                question: "Segundo Siqueira I. e Siqueira J. (2015), o letramento informacional engloba cinco atributos principais. Qual é um deles?",
+                options: [
+                    "Localizar",
+                    "Usar redes sociais",
+                    "Ler livros impressos",
+                    "Analisar filmes"
+                ],
+                answer: "Localizar"
+            },
+            {
+                question: "Qual é um critério essencial para avaliar a credibilidade de uma fonte de informação?",
+                options: [
+                    "Popularidade nas redes sociais",
+                    "Publicação em blogs pessoais",
+                    "Autoridade, precisão e atualidade",
+                    "Comentários do público"
+                ],
+                answer: "Autoridade, precisão e atualidade"
+            },
+            {
+                question: "As fontes primárias são caracterizadas por:",
+                options: [
+                    "Informações originais, como teses e artigos científicos",
+                    "Coleta de dados de fontes terciárias",
+                    "Informações modificadas de terceiros",
+                    "Síntese de várias fontes"
+                ],
+                answer: "Informações originais, como teses e artigos científicos"
+            },
+            {
+                question: "O que são fontes secundárias?",
+                options: [
+                    "Documentos originais",
+                    "Informações sobre documentos primários",
+                    "Informações modificadas",
+                    "Notícias de jornais"
+                ],
+                answer: "Informações sobre documentos primários"
+            },
+            {
+                question: "Qual é a função das fontes terciárias?",
+                options: [
+                    "Guiar o usuário para as fontes primárias e secundárias",
+                    "Fornecer informações originais",
+                    "Modificar informações",
+                    "Publicar notícias"
+                ],
+                answer: "Guiar o usuário para as fontes primárias e secundárias"
+            },
+            {
+                question: "Qual é um exemplo de fonte primária?",
+                options: [
+                    "Tese de doutorado",
+                    "Manual de instruções",
+                    "Diretório de empresas",
+                    "Catálogo de biblioteca"
+                ],
+                answer: "Tese de doutorado"
+            },
+            {
+                question: "Qual é um exemplo de fonte secundária?",
+                options: [
+                    "Livro de referência",
+                    "Tese de doutorado",
+                    "Entrevista",
+                    "História oral"
+                ],
+                answer: "Livro de referência"
+            },
+            {
+                question: "Qual é um exemplo de fonte terciária?",
+                options: [
+                    "Diretório",
+                    "Tese de doutorado",
+                    "Livro de referência",
+                    "Entrevista"
+                ],
+                answer: "Diretório"
+            },
+            {
+                question: "O que é autoridade de uma fonte de informação?",
+                options: [
+                    "Credibilidade do autor ou instituição responsável pela informação",
+                    "Popularidade nas redes sociais",
+                    "Número de visualizações",
+                    "Comentários do público"
+                ],
+                answer: "Credibilidade do autor ou instituição responsável pela informação"
+            },
+            {
+                question: "O que é precisão da informação?",
+                options: [
+                    "Rigor metodológico, clareza e consistência dos dados",
+                    "Popularidade nas redes sociais",
+                    "Número de visualizações",
+                    "Comentários do público"
+                ],
+                answer: "Rigor metodológico, clareza e consistência dos dados"
+            },
+            {
+                question: "O que é atualidade da informação?",
+                options: [
+                    "Data de publicação e frequência de atualizações",
+                    "Popularidade nas redes sociais",
+                    "Número de visualizações",
+                    "Comentários do público"
+                ],
+                answer: "Data de publicação e frequência de atualizações"
+            },
+            {
+                question: "O que são palavras-chave em uma pesquisa acadêmica?",
+                options: [
+                    "Termos principais que representam os conceitos abordados",
+                    "Palavras aleatórias",
+                    "Nomes de autores",
+                    "Títulos de livros"
+                ],
+                answer: "Termos principais que representam os conceitos abordados"
+            },
+            {
+                question: "Qual é o operador booleano que restringe os resultados da pesquisa?",
+                options: [
+                    "AND",
+                    "OR",
+                    "NOT",
+                    "XOR"
+                ],
+                answer: "AND"
+            },
+            {
+                question: "Qual é o operador booleano que amplia os resultados da pesquisa?",
+                options: [
+                    "OR",
+                    "AND",
+                    "NOT",
+                    "XOR"
+                ],
+                answer: "OR"
+            },
+            {
+                question: "Qual é o operador booleano que exclui termos específicos?",
+                options: [
+                    "NOT",
+                    "AND",
+                    "OR",
+                    "XOR"
+                ],
+                answer: "NOT"
+            },
+            {
+                question: "O que é uma pesquisa por frase exata?",
+                options: [
+                    "Uso de aspas duplas para buscar frases específicas",
+                    "Busca por palavras aleatórias",
+                    "Busca por títulos de livros",
+                    "Busca por nomes de autores"
+                ],
+                answer: "Uso de aspas duplas para buscar frases específicas"
+            },
+            {
+                question: "O que é uma pesquisa por variações de palavras?",
+                options: [
+                    "Uso de asterisco (*) para substituir partes de palavras",
+                    "Busca por palavras aleatórias",
+                    "Busca por títulos de livros",
+                    "Busca por nomes de autores"
+                ],
+                answer: "Uso de asterisco (*) para substituir partes de palavras"
+            },
+            {
+                question: "Qual é uma ferramenta de busca acadêmica mencionada no documento?",
+                options: [
+                    "Google Acadêmico",
+                    "Facebook",
+                    "Instagram",
+                    "Twitter"
+                ],
+                answer: "Google Acadêmico"
+            },
+            {
+                question: "Qual é uma base de dados acadêmica mencionada no documento?",
+                options: [
+                    "SciELO",
+                    "Wikipedia",
+                    "Reddit",
+                    "YouTube"
+                ],
+                answer: "SciELO"
+            },
+            {
+                question: "Qual é a importância de usar operadores booleanos nas pesquisas?",
+                options: [
+                    "Refina os resultados obtidos",
+                    "Aumenta o número de visualizações",
+                    "Melhora a popularidade nas redes sociais",
+                    "Facilita a leitura de livros impressos"
+                ],
+                answer: "Refina os resultados obtidos"
+            },
+            {
+                question: "O que é uma pesquisa avançada?",
+                options: [
+                    "Uso de técnicas específicas para obter resultados mais precisos",
+                    "Busca por palavras aleatórias",
+                    "Busca por títulos de livros",
+                    "Busca por nomes de autores"
+                ],
+                answer: "Uso de técnicas específicas para obter resultados mais precisos"
+            },
+            {
+                question: "O que é direito autoral?",
+                options: [
+                    "Conjunto de prerrogativas que protegem juridicamente o autor e sua obra",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Conjunto de prerrogativas que protegem juridicamente o autor e sua obra"
+            },
+            {
+                question: "O que é plágio acadêmico?",
+                options: [
+                    "Apropriação indevida da produção intelectual de outros autores",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Apropriação indevida da produção intelectual de outros autores"
+            },
+            {
+                question: "Qual é uma consequência do plágio acadêmico?",
+                options: [
+                    "Irrelevância científica da pesquisa",
+                    "Aumento de visualizações",
+                    "Popularidade nas redes sociais",
+                    "Melhora na leitura de livros impressos"
+                ],
+                answer: "Irrelevância científica da pesquisa"
+            },
+            {
+                question: "O que é citação?",
+                options: [
+                    "Referência a um autor ou obra utilizada na pesquisa",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Referência a um autor ou obra utilizada na pesquisa"
+            },
+            {
+                question: "O que é referência?",
+                options: [
+                    "Lista de fontes utilizadas na pesquisa",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Lista de fontes utilizadas na pesquisa"
+            },
+            {
+                question: "Qual é a norma da ABNT para citações?",
+                options: [
+                    "NBR 10520",
+                    "NBR 6023",
+                    "NBR 14724",
+                    "NBR 12225"
+                ],
+                answer: "NBR 10520"
+            },
+            {
+                question: "Qual é a norma da ABNT para referências?",
+                options: [
+                    "NBR 6023",
+                    "NBR 10520",
+                    "NBR 14724",
+                    "NBR 12225"
+                ],
+                answer: "NBR 6023"
+            },
+            {
+                question: "O que é um exemplo de citação direta?",
+                options: [
+                    "Transcrição literal de um trecho de uma obra",
+                    "Resumo de um livro",
+                    "Comentário sobre um autor",
+                    "Análise de um filme"
+                ],
+                answer: "Transcrição literal de um trecho de uma obra"
+            },
+            {
+                question: "O que é um exemplo de citação indireta?",
+                options: [
+                    "Parafrasear um trecho de uma obra",
+                    "Transcrição literal de um trecho",
+                    "Comentário sobre um autor",
+                    "Análise de um filme"
+                ],
+                answer: "Parafrasear um trecho de uma obra"
+            },
+            {
+                question: "Qual é a importância de citar corretamente as fontes utilizadas?",
+                options: [
+                    "Evitar plágio e dar crédito aos autores originais",
+                    "Aumentar visualizações",
+                    "Melhorar a popularidade nas redes sociais",
+                    "Facilitar a leitura de livros impressos"
+                ],
+                answer: "Evitar plágio e dar crédito aos autores originais"
+            },
+            {
+                question: "Qual é o papel das bibliotecas escolares na promoção do letramento informacional?",
+                options: [
+                    "Formar indivíduos capazes de aprender com a informação",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Formar indivíduos capazes de aprender com a informação"
+            },
+            {
+                question: "Qual é um dos desafios na implementação de práticas educativas de letramento informacional?",
+                options: [
+                    "Falta de infraestrutura adequada",
+                    "Aumento de visualizações",
+                    "Popularidade nas redes sociais",
+                    "Melhora na leitura de livros impressos"
+                ],
+                answer: "Falta de infraestrutura adequada"
+            },
+            {
+                question: "O que são estilos de aprendizagem?",
+                options: [
+                    "Diferentes maneiras como os estudantes aprendem",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Diferentes maneiras como os estudantes aprendem"
+            },
+            {
+                question: "Qual é a importância de considerar os estilos de aprendizagem na aplicação de atividades de letramento informacional?",
+                options: [
+                    "Tornar as atividades mais eficazes e inclusivas",
+                    "Aumentar visualizações",
+                    "Popularidade nas redes sociais",
+                    "Facilitar a leitura de livros impressos"
+                ],
+                answer: "Tornar as atividades mais eficazes e inclusivas"
+            },
+            {
+                question: "O que é a BNCC (Base Nacional Comum Curricular)?",
+                options: [
+                    "Documento que define as competências e habilidades essenciais para a educação básica",
+                    "Manual de instruções",
+                    "Livro de referência",
+                    "Diretório de empresas"
+                ],
+                answer: "Documento que define as competências e habilidades essenciais para a educação básica"
+            },
+            {
+                question: "Qual é a importância da BNCC na promoção do letramento informacional?",
+                options: [
+                    "Incentivar a autonomia do aluno na construção do conhecimento",
+                    "Aumentar visualizações",
+                    "Popularidade nas redes sociais",
+                    "Facilitar a leitura de livros impressos"
+                ],
+                answer: "Incentivar a autonomia do aluno na construção do conhecimento"
+            },
+            {
+                question: "O que é inclusão digital?",
+                options: [
+                    "Acesso e uso das tecnologias de informação e comunicação",
+                    "Uso de redes sociais",
+                    "Leitura de livros impressos",
+                    "Análise de filmes"
+                ],
+                answer: "Acesso e uso das tecnologias de informação e comunicação"
+            },
+            {
+                question: "Qual é uma ferramenta tecnológica mencionada para facilitar o acesso à informação?",
+                options: [
+                    "Bibliotecas digitais",
+                    "Redes sociais",
+                    "Livros impressos",
+                    "Filmes"
+                ],
+                answer: "Bibliotecas digitais"
+            },
+            {
+                question: "O que é brainstorming?",
+                options: [
+                    "Estratégia de discussão para gerar ideias e questões de pesquisa",
+                    "Leitura de livros impressos",
+                    "Uso de redes sociais",
+                    "Análise de filmes"
+                ],
+                answer: "Estratégia de discussão para gerar ideias e questões de pesquisa"
+            },
+            {
+                question: "Qual é o modelo Big6?",
+                options: [
+                    "Modelo de seis etapas para realizar uma pesquisa eficaz",
+                    "Manual de instruções",
+                    "Livro de referência",
+                    "Diretório de empresas"
+                ],
+                answer: "Modelo de seis etapas para realizar uma pesquisa eficaz"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion() {
+            const questionElement = document.getElementById("question");
+            const optionsElement = document.getElementById("options");
+            const currentQuestion = questions[currentQuestionIndex];
+
+            questionElement.textContent = currentQuestion.question;
+            optionsElement.innerHTML = "";
+
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.addEventListener("click", () => checkAnswer(option));
+                optionsElement.append
