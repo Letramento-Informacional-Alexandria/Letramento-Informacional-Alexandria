@@ -173,12 +173,12 @@
     },
     {
         chapter: "Capítulo 1",
-        question: "Segundo Gasque (2012), o letramento informacional corresponde ao processo de desenvolvimento de competências para:",
+        question: " Qual é o conceito de letramento informacional segundo Gasque (2012)?",
         options: [
             "Localizar, selecionar, acessar, organizar e usar informação",
-            "Usar redes sociais",
-            "Ler livros impressos",
-            "Analisar filmes"
+            "Usar redes sociais informacionais",
+            "Ler livros impressos acadêmicos",
+            "Analisar filmes digitais informacionais"
         ],
         answer: "Localizar, selecionar, acessar, organizar e usar informação"
     },
@@ -186,12 +186,12 @@
         chapter: "Capítulo 1",
         question: "Qual é a relação entre letramento informacional e letramento digital?",
         options: [
-            "São completamente diferentes",
-            "Letramento digital é um componente do letramento informacional",
-            "Letramento informacional é mais importante",
-            "Letramento digital é irrelevante"
+            "São completamente diferentes, um não combina com o outro",
+            "Letramento digital é uma habilidade que pode ser usada juntamente com o letramento informacional",
+            "Letramento informacional é mais importante, pois foca na informação independente do meio",
+            "Letramento digital é vocalizado através da do letramento informacional na análise de programação computacional"
         ],
-        answer: "Letramento digital é um componente do letramento informacional"
+        answer: "Letramento digital é uma habilidade que pode ser usada juntamente com o letramento informacional"
     },
     {
         chapter: "Capítulo 1",
@@ -384,25 +384,25 @@
     },
     {
         chapter: "Capítulo 3",
-        question: "Qual é uma ferramenta de busca acadêmica mencionada no documento?",
+        question: "Qual é uma ferramenta de busca acadêmica mencionada no capítulo 3?",
         options: [
-            "Google Acadêmico",
+            "SciELO",
             "Facebook",
             "Instagram",
-            "Twitter"
+            "TikTok"
         ],
-        answer: "Google Acadêmico"
+        answer: "SciELO"
     },
     {
         chapter: "Capítulo 3",
-        question: "Qual é uma base de dados acadêmica mencionada no documento?",
+        question: "Qual é uma das estratégias avançadas de pesquisa mencionadas no texto para obter resultados específicos?",
         options: [
-            "SciELO",
-            "Wikipedia",
-            "Reddit",
-            "YouTube"
+            "Utilizar emojis nas buscas",
+            "Usar aspas duplas para buscar frases exatas",
+            "Buscar apenas em sites de notícias",
+            "Usar abreviações em todas as palavras"
         ],
-        answer: "SciELO"
+        answer: "Usar aspas duplas para buscar frases exatas"
     },
     // Capítulo 4
     {
@@ -429,14 +429,14 @@
     },
     {
         chapter: "Capítulo 4",
-        question: "Qual é uma consequência do plágio acadêmico?",
+        question: "O que é considerado uma contradição ética no uso de criações intelectuais alheias?",
         options: [
-            "Irrelevância científica da pesquisa",
-            "Aumento de visualizações",
-            "Popularidade nas redes sociais",
-            "Melhora na leitura de livros impressos"
+            "Utilizar uma criação intelectual alheia com a devida autorização e divulgação do verdadeiro autor para fins educativos",
+            "Utilizar uma criação intelectual alheia sem a autorização do autor e sem divulgar a autoria verdadeira, para fins comerciais ou acadêmicos",
+            "Compartilhar informações obtidas de fontes confiáveis em plataformas digitais com a devida citação",
+            "Criar obras originais baseadas em ideias de outros autores, com a devida referência"
         ],
-        answer: "Irrelevância científica da pesquisa"
+        answer: "Utilizar uma criação intelectual alheia sem a autorização do autor e sem divulgar a autoria verdadeira, para fins comerciais ou acadêmicos"
     },
     {
         chapter: "Capítulo 4",
@@ -573,12 +573,12 @@
     },
     {
         chapter: "Capítulo 5",
-        question: "Qual é uma ferramenta tecnológica mencionada para facilitar o acesso à informação?",
+        question: "Qual é um recurso tecnológico mencionado para facilitar o acesso à informação?",
         options: [
-            "Bibliotecas digitais",
+            "Filmes",
             "Redes sociais",
             "Livros impressos",
-            "Filmes"
+            "Bibliotecas digitais"
         ],
         answer: "Bibliotecas digitais"
     }
@@ -606,25 +606,32 @@
             showQuestion();
         }
 
-        function showQuestion() {
-            const questionElement = document.getElementById("question");
-            const optionsElement = document.getElementById("options");
-            const feedbackElement = document.getElementById("feedback");
-            const currentQuestion = selectedQuestions[currentQuestionIndex];
+         function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
-            questionElement.innerHTML = `<strong>${currentQuestion.chapter}</strong><br>Questão ${currentQuestionIndex + 1}: ${currentQuestion.question}`;
-            optionsElement.innerHTML = "";
-            feedbackElement.textContent = "";
+        function showQuestion() {
+            const questionElement = document.getElementById("question");
+            const optionsElement = document.getElementById("options");
+            const feedbackElement = document.getElementById("feedback");
+            const currentQuestion = selectedQuestions[currentQuestionIndex];
+            questionElement.innerHTML = `<strong>${currentQuestion.chapter}</strong><br>Questão ${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+            optionsElement.innerHTML = "";
+            feedbackElement.textContent = "";
+            const shuffledOptions = shuffle([...currentQuestion.options]);
+            shuffledOptions.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.addEventListener("click", () => checkAnswer(option));
+                optionsElement.appendChild(button);
+            });
+            updateNavigation();
+        }
 
-            currentQuestion.options.forEach(option => {
-                const button = document.createElement("button");
-                button.textContent = option;
-                button.addEventListener("click", () => checkAnswer(option));
-                optionsElement.appendChild(button);
-            });
-
-            updateNavigation();
-        }
 
         function checkAnswer(selectedOption) {
             const currentQuestion = selectedQuestions[currentQuestionIndex];
